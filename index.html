@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day 01 - Drum Project</title>
+    <style>
+        /* Pesquisar sobre Transition e Transform na doc do css*/
+    </style>
+</head>
+
+<body>
+    <div class="keys">
+        <div class="key" data-key="65">
+            <kbd>A</kbd>
+            <span class="sound"></span>
+        </div>
+    </div>
+    <audio src="" data-key="65"></audio>
+    <script>
+        
+        function playSound(e) {
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+
+            if (!audio) return
+            audio.currentTime = 0;
+            audio.play()
+            key.classList.add('playing')
+        }
+
+        function removeTransition(e) {
+            if (e.propertyName !== 'transform') return
+            this.classList.remove('playing')
+        }
+
+        const keys = document.querySelectorAll('.key')
+        keys.forEach(key => {
+            key.addEventListener('transitionend', removeTransition)
+        })
+
+        window.addEventListener('keydown',playSound)
+    </script>
+</body>
+
+</html>
