@@ -5,44 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Day 01 - Drum Project</title>
-    <style>
-        /* Pesquisar sobre Transition e Transform na doc do css*/
-    </style>
+    <title>Day 01 - Flower Guy's favorite beats (DrumKit)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/8fe350de0d.js"></script>
 </head>
 
 <body>
-    <div class="keys">
-        <div class="key" data-key="65">
-            <kbd>A</kbd>
-            <span class="sound"></span>
+    <div class="app-container">
+        <!-- <img src="https://media.giphy.com/media/1rRkqtlUoSCuj2RyEx/giphy.gif" alt="giphy-wallpaper"> -->
+        <div class="keys">
+            <div class="key" data-key="65">
+                <kbd>A</kbd>
+                <span class="sound">serenity</span>
+            </div>
+            <div class="key" data-key="83">
+                <kbd>S</kbd>
+                <span class="sound">quiet</span>
+            </div>
+            <div class="key" data-key="68">
+                <kbd>D</kbd>
+                <span class="sound">tranquil</span>
+            </div>
+            <div class="key" data-key="70">
+                <kbd>F</kbd>
+                <span class="sound">pacific</span>
+            </div>
+            <div class="key" data-key="71">
+                <kbd>G</kbd>
+                <span class="sound">stillness</span>
+            </div>
+            <div class="key" data-key="72">
+                <kbd>H</kbd>
+                <span class="sound">peaceful</span>
+            </div>
+            <div class="key" data-key="74">
+                <kbd>J</kbd>
+                <span class="sound">cool</span>
+            </div>
+            <div class="key" data-key="75">
+                <kbd>K</kbd>
+                <span class="sound">life is good</span>
+            </div>
+            <div class="key" data-key="76">
+                <kbd>L</kbd>
+                <span class="sound">refresh</span>
+            </div>
+            <div class="key" data-key="80">
+                <kbd>P</kbd>
+                <span class="sound">again</span>
+            </div>
+            <small>Made with <i class="fa fa-heart"></i> by <span>reedlex98</span></small>
         </div>
     </div>
-    <audio src="" data-key="65"></audio>
-    <script>
-        
-        function playSound(e) {
-            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
-            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
-
-            if (!audio) return
-            audio.currentTime = 0;
-            audio.play()
-            key.classList.add('playing')
-        }
-
-        function removeTransition(e) {
-            if (e.propertyName !== 'transform') return
-            this.classList.remove('playing')
-        }
-
-        const keys = document.querySelectorAll('.key')
-        keys.forEach(key => {
-            key.addEventListener('transitionend', removeTransition)
-        })
-
-        window.addEventListener('keydown',playSound)
-    </script>
+    <audio src="assets/audio/beat1.wav" data-key="65"></audio>
+    <audio src="assets/audio/beat2.wav" data-key="83"></audio>
+    <audio src="assets/audio/beat3.wav" data-key="68"></audio>
+    <audio src="assets/audio/beat4.wav" data-key="70"></audio>
+    <audio src="assets/audio/beat5.wav" data-key="71"></audio>
+    <audio src="assets/audio/beat6.wav" data-key="72"></audio>
+    <audio src="assets/audio/beat7.wav" data-key="74"></audio>
+    <audio src="assets/audio/beat8.wav" data-key="75"></audio>
+    <audio src="assets/audio/beat9.wav" data-key="76"></audio>
+    <audio src="assets/audio/beat10.wav" data-key="80"></audio>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
