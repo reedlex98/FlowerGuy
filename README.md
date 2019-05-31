@@ -1,0 +1,2 @@
+# FlowerGuy
+It's my project for day 1 of Javascript 30 Day Vanilla Js Coding Challenge. This is my first project in this coding challenge, I have build web page page for a character named FlowerGuy. He has a good musical taste and like to stand seated at the top of the green hill listening to his favorites lo-fi beats, he is a very chilled out guy I think... Press the keys displayed on the screen to listen to the beats you too
